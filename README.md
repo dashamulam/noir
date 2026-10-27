@@ -30,6 +30,12 @@ The site includes a `netlify.toml` with the production build settings, SPA fallb
 
 The Netlify API proxy uses `https://saavn.sumit.co`. `SAAVN_API_URL` in `.env` applies to local development and the included Node server, not to the Netlify proxy.
 
+## Deploy to Vercel
+
+The site includes a `vercel.json` with the production build settings, SPA fallback, and an API proxy to the default JioSaavn API. To deploy it, sign in to Vercel, choose **Add New…** → **Project**, import `r6867751-netizen/noir` from GitHub, and select **Deploy**. Vercel will use the included settings; no extra environment variables are required. Future pushes to `main` will trigger new deployments.
+
+The Vercel API proxy uses `https://saavn.sumit.co`. `SAAVN_API_URL` in `.env` applies to local development and the included Node server, not to the Vercel proxy.
+
 ## API configuration
 
 Copy `.env.example` to `.env` and set:
