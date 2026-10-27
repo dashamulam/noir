@@ -32,6 +32,11 @@ test('likes and custom playlists persist and tracks can be removed', async ({ pa
   await page.getByRole('button', { name: 'Add Midnight Signal to a playlist', exact: true }).click();
   await page.getByRole('textbox', { name: 'OR CREATE SOMETHING NEW' }).fill('Night drive');
   await page.getByRole('button', { name: 'Create & add song', exact: true }).click();
+  const otherTab = await page.context().newPage();
+  await fixtures(otherTab);
+  await otherTab.goto('/');
+  expect(await otherTab.evaluate(() => sessionStorage.getItem('noir-likes'))).toBeNull();
+  await otherTab.close();
   await page.reload();
   await page.getByRole('button', { name: 'Night drive', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Night drive', exact: true })).toBeVisible();
@@ -90,9 +95,9 @@ test('keyboard-accessible settings persist and dialogs close with Escape', async
 
 test('invalid stored library data recovers without crashing', async ({ page }) => {
   await page.addInitScript(() => {
-    localStorage.setItem('noir-likes', '{not-json');
-    localStorage.setItem('noir-playlists', JSON.stringify([{ id: 'bad', name: 'Broken', songs: [{ id: 'x' }] }]));
-    localStorage.setItem('noir-volume', '99');
+    sessionStorage.setItem('noir-likes', '{not-json');
+    sessionStorage.setItem('noir-playlists', JSON.stringify([{ id: 'bad', name: 'Broken', songs: [{ id: 'x' }] }]));
+    sessionStorage.setItem('noir-volume', '99');
   });
   await page.goto('/');
   await page.getByRole('button', { name: 'Your library', exact: true }).click();

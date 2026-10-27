@@ -57,7 +57,7 @@ Use `npm start` for production, rather than `vite preview`: the included Node se
 - Curated mood collections and language discovery. Mood collections are live searches; they are not official JioSaavn playlists or personalized recommendations.
 - Persistent audio player, seeking, volume, mute, shuffle, repeat, queue, and now-playing dialog.
 - Browser media-session controls where supported.
-- Liked songs, custom playlists, and recently played tracks stored in localStorage on this browser/device.
+- Liked songs, custom playlists, recently played tracks, streaming quality, and volume stored in sessionStorage for the current browser tab. They survive reloads but are cleared when the tab's session ends.
 - Configurable stream quality: up to 320, 160, or 96 kbps, depending on the song.
 - Keyboard shortcuts: `/` focuses search; `Space` toggles playback when not interacting with a form or button.
 
@@ -76,7 +76,7 @@ On Windows, install the test browser once with `npx playwright install chromium`
 src/App.tsx              Navigation, discovery, library, dialogs
 src/components/         Player, track list, artwork, accessible dialog
 src/hooks/              Catalog requests and audio state
-src/lib/                API client, collection definitions, local persistence
+src/lib/                API client, collection definitions, session persistence
 src/styles.css          Responsive monochrome glass design
 public/                 Original SVG artwork and fallback covers
 scripts/serve.mjs        Production static server and API proxy

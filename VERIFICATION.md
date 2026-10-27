@@ -28,7 +28,7 @@ npm test
 The suite covers:
 
 1. Debounced searches, stale request cancellation, pagination, empty results, API errors, and retry recovery.
-2. Liked songs and custom playlists surviving reload, and removing songs from a playlist.
+2. Liked songs and custom playlists surviving reload within a tab session, not being shared with a separate tab, and removing songs from a playlist.
 3. Actual HTML audio playback using a generated WAV fixture: time advancement, pause, seek, volume, track changes, repeat, queue selection, and navigation continuity.
 4. Settings persistence, Escape dismissal, and keyboard search focus.
 5. Mobile navigation, playback, playlist creation, and horizontal overflow checks.
