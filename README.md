@@ -24,6 +24,12 @@ Open `http://localhost:5173`. The server binds to `0.0.0.0`, so other devices on
 
 For development, use `npm run dev` instead. Both the development and production servers forward `/api` requests to the configured JioSaavn API. Audio streams play directly from the URLs returned by that API.
 
+## Deploy to Netlify
+
+The site includes a `netlify.toml` with the production build settings, SPA fallback, and an API proxy to the default JioSaavn API. To deploy it, sign in to Netlify, choose **Add new project** → **Import an existing project**, connect GitHub, and select `r6867751-netizen/noir`. Netlify will build and publish the site from the repository; no extra build settings or environment variables are required. Future pushes to `main` will trigger new deployments.
+
+The Netlify API proxy uses `https://saavn.sumit.co`. `SAAVN_API_URL` in `.env` applies to local development and the included Node server, not to the Netlify proxy.
+
 ## API configuration
 
 Copy `.env.example` to `.env` and set:
