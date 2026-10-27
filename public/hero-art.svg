@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" fill="none">
+<defs>
+<radialGradient id="bg" cx=".75" cy=".35" r=".7"><stop stop-color="#626263"/><stop offset=".48" stop-color="#262628"/><stop offset="1" stop-color="#0c0c0e"/></radialGradient>
+<linearGradient id="metal" x1="450" y1="60" x2="1000" y2="520" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".25" stop-color="#bdbdbd"/><stop offset=".5" stop-color="#454548"/><stop offset=".72" stop-color="#c1c1c1"/><stop offset="1" stop-color="#19191b"/></linearGradient>
+<radialGradient id="sphere" cx=".3" cy=".22" r=".8"><stop stop-color="#fff"/><stop offset=".4" stop-color="#e0e0e1"/><stop offset=".8" stop-color="#7f7f82"/><stop offset="1" stop-color="#29292c"/></radialGradient>
+<filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".07"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<rect width="1200" height="540" fill="url(#bg)"/>
+<ellipse cx="877" cy="440" rx="245" ry="42" fill="#000" opacity=".65" filter="url(#shadow)"/>
+<g transform="translate(850 268) rotate(-30)">
+<ellipse rx="276" ry="185" stroke="url(#metal)" stroke-width="55"/>
+<g stroke="#ebebeb" opacity=".25">
+<ellipse rx="253" ry="162"/><ellipse rx="258" ry="167"/><ellipse rx="263" ry="172"/><ellipse rx="268" ry="177"/><ellipse rx="273" ry="182"/><ellipse rx="278" ry="187"/><ellipse rx="283" ry="192"/><ellipse rx="288" ry="197"/><ellipse rx="293" ry="202"/><ellipse rx="298" ry="207"/>
+</g>
+<circle cx="32" cy="-19" r="109" fill="url(#sphere)"/>
+<path d="M-254 42C-223 161-87 215 63 178 185 149 259 58 270-34" stroke="url(#metal)" stroke-width="48"/>
+<g stroke="#f7f7f7" opacity=".26"><path d="M-274 42C-240 174-90 237 70 196 204 162 281 59 290-34"/><path d="M-269 42C-237 171-90 232 68 191 199 159 276 59 285-34"/><path d="M-264 42C-234 168-90 227 66 186 195 155 271 59 280-34"/><path d="M-259 42C-231 165-90 222 64 181 191 151 266 59 275-34"/></g>
+</g>
+<rect width="1200" height="540" filter="url(#grain)" opacity=".5"/>
+</svg>
